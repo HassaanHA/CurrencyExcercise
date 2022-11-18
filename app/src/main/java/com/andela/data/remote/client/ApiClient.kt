@@ -1,11 +1,11 @@
-package com.andela.remote.client
+package com.andela.data.remote.client
 
-import com.andela.remote.models.CurrencyRates
-import com.andela.remote.models.Symbols
+import com.andela.data.remote.models.CurrencyRates
+import com.andela.data.remote.models.Symbols
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-public interface CurrencyApiClient {
+public interface ApiClient {
 
     @GET("symbols")
     suspend fun getCountries(): Symbols

@@ -8,4 +8,11 @@
     <string name="no_Internet">Please check your internet connection</string>
     <string name="label_ok">Okay</string>
     <string name="xxxx">XXXX</string>
+    <string name="base">Base</string>
+    <string name="arrow_down">arrow_down</string>
+    <string name="bottom">bottom</string>
+    <string name="top">top</string>
+    <string name="history_list">History List</string>
+    <string name="popular_currencies_list">Popular Currencies List</string>
+    <string name="currencyconverter">CurrencyConverter</string>
 </resources>

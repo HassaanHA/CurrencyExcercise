@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.andela.presentation.viewModels.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2" />
+
+        <TextView
+            android:id="@+id/app_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/currencyconverter"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topGuide" />
+
+        <TextView
+            android:id="@+id/select_base_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/select_base_currency_label"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/app_title" />
+
+        <ImageView
+            android:id="@+id/exchangeIv"
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_swap"
+            app:layout_constraintStart_toEndOf="@+id/baseTv"
+            app:layout_constraintEnd_toStartOf="@+id/convertedTv"
+            app:layout_constraintTop_toBottomOf="@+id/select_base_textview" />
+
+        <TextView
+            android:id="@+id/baseTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/item_details_bg"
+            android:minWidth="140dp"
+            android:minHeight="60dp"
+            android:padding="10dp"
+            android:text="@{viewmodel.from}"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/select_base_textview" />
+
+        <EditText
+            android:id="@+id/baseEt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/item_details_bg"
+            android:hint="@string/xxxx"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:minWidth="140dp"
+            android:minHeight="60dp"
+            android:maxLength="5"
+            android:padding="10dp"
+            android:text="@={viewmodel.baseField}"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/baseTv"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:id="@+id/converted_currency_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/currency_to_convert_label"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/exchangeIv"
+            app:layout_constraintTop_toBottomOf="@+id/app_title" />
+
+        <TextView
+            android:id="@+id/convertedTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/item_details_bg"
+            android:minWidth="140dp"
+            android:minHeight="60dp"
+            android:padding="10dp"
+            android:text="@{viewmodel.toText}"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/exchangeIv"
+            app:layout_constraintTop_toBottomOf="@+id/converted_currency_textview" />
+
+        <EditText
+            android:id="@+id/convertedEt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/item_details_bg"
+            android:hint="@string/xxxx"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:minWidth="140dp"
+            android:minHeight="60dp"
+            android:maxLength="5"
+            android:padding="10dp"
+            android:text="@={viewmodel.convertedField}"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/exchangeIv"
+            app:layout_constraintTop_toBottomOf="@+id/convertedTv"
+            tools:ignore="LabelFor" />
+
+        <Button
+            android:id="@+id/convert_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="50dp"
+            android:layout_marginTop="10dp"
+            android:onClick="@{() -> viewmodel.convertDetails()}"
+            android:text="@string/convert"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/convertedEt" />
+
+
+        <Button
+            android:id="@+id/details_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="60dp"
+            android:onClick="@{() -> viewmodel.getDetails()}"
+            android:text="@string/details"
+            android:textAllCaps="false"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/convert_button" />
+
+        <ProgressBar
+            android:id="@+id/progressBarCircle"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/details_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

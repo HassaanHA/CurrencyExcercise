@@ -1,4 +1,4 @@
-package com.andela.remote.models
+package com.andela.data.remote.models
 
 import com.google.gson.annotations.SerializedName
 

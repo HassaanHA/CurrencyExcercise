@@ -1,14 +1,14 @@
-package com.andela.remote.datasource
+package com.andela.data.remote.datasource
 
-import com.andela.remote.client.CurrencyApiClient
-import com.andela.remote.models.CurrencyRates
-import com.andela.remote.models.Symbols
+import com.andela.data.remote.client.ApiClient
+import com.andela.data.remote.models.CurrencyRates
+import com.andela.data.remote.models.Symbols
 import com.andela.utils.StateHandler
 import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Inject
 
-class CurrencyRemoteDataSource @Inject constructor(
-    private val currencyClientApi: CurrencyApiClient,
+class RemoteDataSource @Inject constructor(
+    private val currencyClientApi: ApiClient,
     private val dispatcher: CoroutineDispatcher
 ) {
 
