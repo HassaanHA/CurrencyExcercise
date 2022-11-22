@@ -1,14 +1,13 @@
 package com.andela.presentation.viewModels
 
-
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.andela.data.repository.CurrencyRepository
 import com.andela.domain.entity.Conversion
 import com.andela.domain.entity.Currency
-import com.andela.utils.MutableEvent
-import com.andela.utils.StateHandler
+import com.andela.core.utils.MutableEvent
+import com.andela.core.utils.StateHandler
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
@@ -20,11 +19,13 @@ class MainViewModel @Inject constructor(
     private val currencyRepository: CurrencyRepository,
 ) : ViewModel() {
 
-    var _currencyStateFlow : MutableStateFlow<StateHandler<List<Currency>?>> = MutableStateFlow(StateHandler.Empty)
+    var _currencyStateFlow : MutableStateFlow<StateHandler<List<Currency>?>> = MutableStateFlow(
+        StateHandler.Empty)
 
     var currencyStateFlow: StateFlow<StateHandler<List<Currency>?>> = _currencyStateFlow
 
-    val _currencyConvertedValue: MutableStateFlow<StateHandler<Conversion?>> = MutableStateFlow(StateHandler.Empty)
+    val _currencyConvertedValue: MutableStateFlow<StateHandler<Conversion?>> = MutableStateFlow(
+        StateHandler.Empty)
 
     var from: MutableLiveData<String> = MutableLiveData("from")
 
@@ -54,7 +55,8 @@ class MainViewModel @Inject constructor(
         transactions.postValue(list)
     }
 
-    var _topCurrencyStateFlow : MutableStateFlow<StateHandler<List<Conversion>?>> = MutableStateFlow(StateHandler.Empty)
+    var _topCurrencyStateFlow : MutableStateFlow<StateHandler<List<Conversion>?>> = MutableStateFlow(
+        StateHandler.Empty)
 
     var topCurrencyStateFlow: StateFlow<StateHandler<List<Conversion>?>> = _topCurrencyStateFlow
 

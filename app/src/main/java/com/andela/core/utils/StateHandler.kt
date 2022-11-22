@@ -1,4 +1,4 @@
-package com.andela.utils
+package com.andela.core.utils
 
 
 sealed class StateHandler<out T> {

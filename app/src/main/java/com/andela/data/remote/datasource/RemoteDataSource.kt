@@ -3,7 +3,7 @@ package com.andela.data.remote.datasource
 import com.andela.data.remote.client.ApiClient
 import com.andela.data.remote.models.CurrencyRates
 import com.andela.data.remote.models.Symbols
-import com.andela.utils.StateHandler
+import com.andela.core.utils.StateHandler
 import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Inject
 

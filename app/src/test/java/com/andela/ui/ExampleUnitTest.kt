@@ -1,4 +1,4 @@
-package com.andela.currencyexcercise
+package com.andela.ui
 
 import org.junit.Test
 

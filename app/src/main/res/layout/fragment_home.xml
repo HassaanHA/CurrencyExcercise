@@ -54,7 +54,8 @@
             android:src="@drawable/ic_swap"
             app:layout_constraintStart_toEndOf="@+id/baseTv"
             app:layout_constraintEnd_toStartOf="@+id/convertedTv"
-            app:layout_constraintTop_toBottomOf="@+id/select_base_textview" />
+            app:layout_constraintTop_toBottomOf="@+id/select_base_textview"
+            android:contentDescription="@string/convert" />
 
         <TextView
             android:id="@+id/baseTv"
@@ -170,7 +171,7 @@
             app:layout_constraintTop_toBottomOf="@+id/convert_button" />
 
         <ProgressBar
-            android:id="@+id/progressBarCircle"
+            android:id="@+id/progressBar"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginTop="10dp"

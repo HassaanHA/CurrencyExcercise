@@ -1,4 +1,4 @@
-package com.andela.utils
+package com.andela.core.utils
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer

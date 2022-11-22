@@ -6,7 +6,7 @@ import com.andela.data.remote.datasource.LocalDataSource
 import com.andela.data.remote.datasource.RemoteDataSource
 import com.andela.domain.entity.Conversion
 import com.andela.domain.entity.Currency
-import com.andela.utils.StateHandler
+import com.andela.core.utils.StateHandler
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

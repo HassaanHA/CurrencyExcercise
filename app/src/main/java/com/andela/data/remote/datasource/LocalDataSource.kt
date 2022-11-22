@@ -1,7 +1,7 @@
 package com.andela.data.remote.datasource
 
 import androidx.lifecycle.LiveData
-import com.andela.currencydb.DaoObj
+import com.andela.core.currencydb.DaoObj
 import com.andela.domain.entity.Conversion
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext

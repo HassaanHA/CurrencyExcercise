@@ -1,4 +1,4 @@
-package com.andela.currencydb
+package com.andela.core.currencydb
 
 import androidx.lifecycle.LiveData
 import androidx.room.*

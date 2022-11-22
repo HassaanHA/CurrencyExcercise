@@ -1,12 +1,12 @@
-package com.andela.di
+package com.andela.core.di
 
 import android.content.Context
 import androidx.room.Room
-import com.andela.currencydb.DaoObj
-import com.andela.currencydb.RoomDb
+import com.andela.core.currencydb.DaoObj
+import com.andela.core.currencydb.RoomDb
 import com.andela.data.remote.client.ApiClient
-import com.andela.utils.CurrencyExcerciseInterceptor
-import com.andela.utils.NetworkUtil
+import com.andela.core.utils.CurrencyExcerciseInterceptor
+import com.andela.core.utils.NetworkUtil
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

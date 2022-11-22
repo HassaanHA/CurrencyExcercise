@@ -1,4 +1,4 @@
-package com.andela.utils
+package com.andela.core.utils
 
 import okhttp3.Interceptor
 import okhttp3.Response

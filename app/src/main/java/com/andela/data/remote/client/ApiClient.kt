@@ -5,7 +5,7 @@ import com.andela.data.remote.models.Symbols
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-public interface ApiClient {
+interface ApiClient {
 
     @GET("symbols")
     suspend fun getCountries(): Symbols
